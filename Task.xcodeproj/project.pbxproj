@@ -12,6 +12,11 @@
 		3A7E3DF52C241BA500331BED /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3DF42C241BA500331BED /* TaskListView.swift */; };
 		3A7E3DF72C24231800331BED /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3DF62C24231800331BED /* AddTaskView.swift */; };
 		3A7E3DF92C24359800331BED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3DF82C24359800331BED /* ViewModel.swift */; };
+		3A7E3E032C2566A300331BED /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E022C2566A300331BED /* TaskRow.swift */; };
+		3A7E3E062C25856800331BED /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E052C25856800331BED /* EditTaskView.swift */; };
+		3A7E3E092C25870900331BED /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E082C25870900331BED /* CustomTextField.swift */; };
+		3A7E3E0B2C25873100331BED /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E0A2C25873100331BED /* CustomButton.swift */; };
+		3A7E3E0D2C25907600331BED /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E0C2C25907600331BED /* BackgroundView.swift */; };
 		3ABA58102C24133000AC3451 /* TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA580F2C24133000AC3451 /* TaskApp.swift */; };
 		3ABA58122C24133000AC3451 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA58112C24133000AC3451 /* ContentView.swift */; };
 		3ABA58142C24134600AC3451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA58132C24134600AC3451 /* Assets.xcassets */; };
@@ -24,6 +29,11 @@
 		3A7E3DF42C241BA500331BED /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		3A7E3DF62C24231800331BED /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		3A7E3DF82C24359800331BED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3A7E3E022C2566A300331BED /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		3A7E3E052C25856800331BED /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		3A7E3E082C25870900331BED /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		3A7E3E0A2C25873100331BED /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		3A7E3E0C2C25907600331BED /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		3ABA580C2C24133000AC3451 /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABA580F2C24133000AC3451 /* TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskApp.swift; sourceTree = "<group>"; };
 		3ABA58112C24133000AC3451 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,8 +55,9 @@
 		3A7E3DEC2C2414D600331BED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3A7E3DF42C241BA500331BED /* TaskListView.swift */,
-				3A7E3DF62C24231800331BED /* AddTaskView.swift */,
+				3A7E3E042C25850B00331BED /* EditTask */,
+				3A7E3DFD2C25651E00331BED /* TaskList */,
+				3A7E3E012C2565F800331BED /* AddTask */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -75,6 +86,57 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3A7E3DFD2C25651E00331BED /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				3A7E3DFF2C2565A500331BED /* View */,
+				3A7E3E002C2565BC00331BED /* Subviews */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		3A7E3DFF2C2565A500331BED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A7E3DF42C241BA500331BED /* TaskListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A7E3E002C2565BC00331BED /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3A7E3E022C2566A300331BED /* TaskRow.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		3A7E3E012C2565F800331BED /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				3A7E3DF62C24231800331BED /* AddTaskView.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		3A7E3E042C25850B00331BED /* EditTask */ = {
+			isa = PBXGroup;
+			children = (
+				3A7E3E052C25856800331BED /* EditTaskView.swift */,
+			);
+			path = EditTask;
+			sourceTree = "<group>";
+		};
+		3A7E3E072C2586B400331BED /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3A7E3E082C25870900331BED /* CustomTextField.swift */,
+				3A7E3E0A2C25873100331BED /* CustomButton.swift */,
+				3A7E3E0C2C25907600331BED /* BackgroundView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		3ABA58032C24133000AC3451 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +161,7 @@
 				3A7E3DEC2C2414D600331BED /* Views */,
 				3A7E3DED2C2414E300331BED /* ViewModel */,
 				3A7E3DEE2C2414F600331BED /* Model */,
+				3A7E3E072C2586B400331BED /* Components */,
 				3A7E3DF12C24172200331BED /* Extensions */,
 				3ABA58132C24134600AC3451 /* Assets.xcassets */,
 				3ABA58152C24134600AC3451 /* Preview Content */,
@@ -184,10 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7E3E062C25856800331BED /* EditTaskView.swift in Sources */,
 				3A7E3DF02C24162400331BED /* Model.swift in Sources */,
 				3ABA58122C24133000AC3451 /* ContentView.swift in Sources */,
 				3A7E3DF52C241BA500331BED /* TaskListView.swift in Sources */,
+				3A7E3E092C25870900331BED /* CustomTextField.swift in Sources */,
+				3A7E3E032C2566A300331BED /* TaskRow.swift in Sources */,
+				3A7E3E0D2C25907600331BED /* BackgroundView.swift in Sources */,
 				3A7E3DF72C24231800331BED /* AddTaskView.swift in Sources */,
+				3A7E3E0B2C25873100331BED /* CustomButton.swift in Sources */,
 				3ABA58102C24133000AC3451 /* TaskApp.swift in Sources */,
 				3A7E3DF32C24176500331BED /* Color+Extension.swift in Sources */,
 				3A7E3DF92C24359800331BED /* ViewModel.swift in Sources */,

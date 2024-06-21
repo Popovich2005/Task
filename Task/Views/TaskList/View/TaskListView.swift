@@ -10,6 +10,7 @@ import SwiftUI
 struct TaskListView: View {
     
     @EnvironmentObject var vm: ViewModel
+    @State private var isEditViewPresented = false
     
     //    MARK: - Body
     var body: some View {
@@ -17,17 +18,23 @@ struct TaskListView: View {
             ZStack {
                 
                 // MARK: Background
-                LinearGradient(
-                    colors: [Color.tDBackground1, Color.tDBackground2],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
+                BackgroundView()
                 VStack {
                     List {
                         ForEach(vm.tasks) { task in
-                            Text(task.title)
+                            TaskRow(action: {
+                                vm.isCompletedTask(task: task)
+                            }, model: task)
+                            .onTapGesture {
+                                isEditViewPresented = true
+                            }
                         }
+                        .onDelete(perform: vm.deleteTask)
+                        
+                        // MARK: Edit View
+                        .sheet(isPresented: $isEditViewPresented, content: {
+                            EditTaskView()
+                        })
                     }
                     .listStyle(.plain)
                 }

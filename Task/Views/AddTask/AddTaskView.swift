@@ -13,38 +13,21 @@ struct AddTaskView: View {
     
     @EnvironmentObject var vm: ViewModel
     @Environment (\.dismiss) private var dismiss
+
     
     var body: some View {
         ZStack {
             
             // MARK: Background
-            LinearGradient(
-                colors: [Color.tDBackground1, Color.tDBackground2],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+            BackgroundView()
             
             VStack {
                 // MARK: TextField
-                TextField("Введите новую задачу", text: $vm.newTask)
-                    .font(.headline)
-                    .padding()
-                    .background(Color.tDPrimary.opacity(0.2))
-                    .cornerRadius(10)
+                CustomTextField(placeholder: "Введите новую задачу")
                 
                 // MARK: Add Task Button
-                Button {
+                CustomButton(titleButton: "Добавить задачу") {
                     vm.addTask(task: vm.newTask)
-                    dismiss()
-                } label: {
-                    Text("Добавить задачу")
-                        .font(.headline)
-                        .padding()
-                        .foregroundColor(Color.tDBackground1)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.tDAccent)
-                        .cornerRadius(10)
                 }
                 Spacer()
             }
