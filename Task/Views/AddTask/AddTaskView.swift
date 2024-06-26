@@ -29,6 +29,7 @@ struct AddTaskView: View {
                 CustomButton(titleButton: "Добавить задачу") {
                     vm.addTask(task: vm.newTask)
                 }
+                .disabled(vm.newTask.isEmpty)
                 Spacer()
             }
             .padding()

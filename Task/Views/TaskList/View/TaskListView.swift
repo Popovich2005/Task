@@ -20,23 +20,43 @@ struct TaskListView: View {
                 // MARK: Background
                 BackgroundView()
                 VStack {
-                    List {
-                        ForEach(vm.tasks) { task in
-                            TaskRow(action: {
-                                vm.isCompletedTask(task: task)
-                            }, model: task)
-                            .onTapGesture {
-                                isEditViewPresented = true
-                            }
-                        }
-                        .onDelete(perform: vm.deleteTask)
+                    
+                    if vm.tasks.isEmpty {
                         
-                        // MARK: Edit View
-                        .sheet(isPresented: $isEditViewPresented, content: {
-                            EditTaskView()
-                        })
+                        // MARK: - Empty List
+                        NoTasksView()
+                    } else {
+                        
+                        // MARK: List Of Tasks
+                        List {
+                            ForEach(vm.tasks) { task in
+                                TaskRow(action: {
+                                    vm.isCompletedTask(task: task)
+                                }, model: task)
+                                .onTapGesture {
+                                    vm.selectedTask = task
+                                    isEditViewPresented = true
+                                }
+                            }
+                            .onDelete(perform: vm.deleteTask)
+                            
+                            // MARK: Edit View
+                            .sheet(isPresented: $isEditViewPresented, content: {
+                                if let taskToEdit = vm.selectedTask {
+                                    EditTaskView(task: taskToEdit)
+                                }
+                            })
+                        }
+                        .listStyle(.plain)
+                        
+                        // MARK: Progress View
+                        ProgressView("Выполненные Задачи", value: vm.completionRate)
+                            .progressViewStyle(LinearProgressViewStyle())
+                            .accentColor(Color.tDPrimary)
+                            .padding()
+                            .cornerRadius(10)
+                            .padding(.horizontal)
                     }
-                    .listStyle(.plain)
                 }
             }
             
@@ -60,3 +80,5 @@ struct TaskListView: View {
         .environmentObject(ViewModel())
         .preferredColorScheme(.dark)
 }
+
+

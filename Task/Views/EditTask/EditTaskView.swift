@@ -12,6 +12,7 @@ struct EditTaskView: View {
     // MARK: - Properties
     @EnvironmentObject var vm: ViewModel
     @Environment (\.dismiss) private var dismiss
+    var task: TaskModel
     
     var body: some View {
         VStack {
@@ -36,7 +37,7 @@ struct EditTaskView: View {
             
             CustomTextField(placeholder: "Редактирование Задачи")
             CustomButton(titleButton: "Сохранить") {
-//                vm.addTask(task: vm.newTask)
+                vm.updateTask(id: task.id, title: vm.newTask)
             }
             
             Spacer()
@@ -46,11 +47,14 @@ struct EditTaskView: View {
         .background(
             BackgroundView()
         )
+        .onAppear() {
+            vm.newTask = task.title
+        }
     }
 }
 
 #Preview {
-    EditTaskView()
+    EditTaskView(task: TaskModel(title: "Task1"))
         .environmentObject(ViewModel())
         .preferredColorScheme(.dark)
 }

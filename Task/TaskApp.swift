@@ -17,7 +17,7 @@ struct TaskApp: App {
     // MARK: - Body
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContainerView()
                 .environmentObject(vm)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
         }

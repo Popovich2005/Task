@@ -17,6 +17,10 @@
 		3A7E3E092C25870900331BED /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E082C25870900331BED /* CustomTextField.swift */; };
 		3A7E3E0B2C25873100331BED /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E0A2C25873100331BED /* CustomButton.swift */; };
 		3A7E3E0D2C25907600331BED /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E0C2C25907600331BED /* BackgroundView.swift */; };
+		3A7E3E0F2C298C0900331BED /* NoTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E0E2C298C0900331BED /* NoTasksView.swift */; };
+		3A7E3E122C2C05E300331BED /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E112C2C05E300331BED /* LaunchScreen.swift */; };
+		3A7E3E142C2C0D0000331BED /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E132C2C0D0000331BED /* CustomProgressView.swift */; };
+		3A7E3E162C2C124A00331BED /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E3E152C2C124A00331BED /* ContainerView.swift */; };
 		3ABA58102C24133000AC3451 /* TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA580F2C24133000AC3451 /* TaskApp.swift */; };
 		3ABA58122C24133000AC3451 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA58112C24133000AC3451 /* ContentView.swift */; };
 		3ABA58142C24134600AC3451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA58132C24134600AC3451 /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 		3A7E3E082C25870900331BED /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3A7E3E0A2C25873100331BED /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3A7E3E0C2C25907600331BED /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		3A7E3E0E2C298C0900331BED /* NoTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksView.swift; sourceTree = "<group>"; };
+		3A7E3E112C2C05E300331BED /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		3A7E3E132C2C0D0000331BED /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		3A7E3E152C2C124A00331BED /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		3ABA580C2C24133000AC3451 /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABA580F2C24133000AC3451 /* TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskApp.swift; sourceTree = "<group>"; };
 		3ABA58112C24133000AC3451 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +63,7 @@
 		3A7E3DEC2C2414D600331BED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A7E3E102C2C05B400331BED /* LaunchScreen */,
 				3A7E3E042C25850B00331BED /* EditTask */,
 				3A7E3DFD2C25651E00331BED /* TaskList */,
 				3A7E3E012C2565F800331BED /* AddTask */,
@@ -107,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7E3E022C2566A300331BED /* TaskRow.swift */,
+				3A7E3E0E2C298C0900331BED /* NoTasksView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -137,6 +147,17 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		3A7E3E102C2C05B400331BED /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA58112C24133000AC3451 /* ContentView.swift */,
+				3A7E3E112C2C05E300331BED /* LaunchScreen.swift */,
+				3A7E3E152C2C124A00331BED /* ContainerView.swift */,
+				3A7E3E132C2C0D0000331BED /* CustomProgressView.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		3ABA58032C24133000AC3451 = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				3ABA580F2C24133000AC3451 /* TaskApp.swift */,
-				3ABA58112C24133000AC3451 /* ContentView.swift */,
 				3A7E3DEC2C2414D600331BED /* Views */,
 				3A7E3DED2C2414E300331BED /* ViewModel */,
 				3A7E3DEE2C2414F600331BED /* Model */,
@@ -247,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7E3E122C2C05E300331BED /* LaunchScreen.swift in Sources */,
 				3A7E3E062C25856800331BED /* EditTaskView.swift in Sources */,
 				3A7E3DF02C24162400331BED /* Model.swift in Sources */,
 				3ABA58122C24133000AC3451 /* ContentView.swift in Sources */,
@@ -254,10 +275,13 @@
 				3A7E3E092C25870900331BED /* CustomTextField.swift in Sources */,
 				3A7E3E032C2566A300331BED /* TaskRow.swift in Sources */,
 				3A7E3E0D2C25907600331BED /* BackgroundView.swift in Sources */,
+				3A7E3E142C2C0D0000331BED /* CustomProgressView.swift in Sources */,
 				3A7E3DF72C24231800331BED /* AddTaskView.swift in Sources */,
 				3A7E3E0B2C25873100331BED /* CustomButton.swift in Sources */,
 				3ABA58102C24133000AC3451 /* TaskApp.swift in Sources */,
+				3A7E3E162C2C124A00331BED /* ContainerView.swift in Sources */,
 				3A7E3DF32C24176500331BED /* Color+Extension.swift in Sources */,
+				3A7E3E0F2C298C0900331BED /* NoTasksView.swift in Sources */,
 				3A7E3DF92C24359800331BED /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
