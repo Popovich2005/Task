@@ -1,6 +1,6 @@
 # Список дел
 
-Программа написана на языке SwiftUI с применением  архитектуры MVVC
+Программа написана на языке SwiftUI с применением  архитектуры MVVM
 
 ![1](https://github.com/Popovich2005/Task/blob/main/ScreenShots/1.png)
 
